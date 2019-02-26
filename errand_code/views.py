@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 import routedtools
+import config
 
 # A) Connect to appropriate Yelp database
 print('Establishing database connection....')

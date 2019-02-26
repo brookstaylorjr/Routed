@@ -1,2 +1,6 @@
 development*
 glove_dict.p
+config.py
+.ipynb_checkpoints*
+
+
