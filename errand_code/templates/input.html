@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon-16x16.png">
+   <title>Errand Routing with Insight</title>
+
+   <!-- Bootstrap core CSS -->
+     <link href="../static/css/routed.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Source+Sans+Pro" rel="stylesheet">
+ </head>
+
+ <body id="#overrride">
+
+   <div class="navbar navbar-inverse navbar-fixed-top">
+       <a href="/input"><div class="navlink">home</div></a>
+       <a href="/about"><div class="navlink">about</div></a>
+       <a href="/input"> <img id="logo" src="../static/img/routed_logo.png"></a>
+   </div>
+
+
+<div class="container">
+    <div class="form-holder">
+    <h2>Let's get you going.</h2>
+    <div>What do you need to buy today? Enter some items in the list below, or copy one of example lists on the right.</div>
+        <form action="/output" method="GET">
+          <div class="form-group">
+            <label for="shopping_list">Shopping List</label>
+            <textarea class="form-control" id="shopping_list" name="shopping_list", rows="10"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="start_address">Starting Address</label>
+            <input class="form-control" id="start_address" name="start_address", value="84 W Cypress St Phoenix, AZ 85003"></input>
+          </div>
+            <div>
+              <button type="submit" id="submit" class="btn btn-default btn-lg">Route me!</button>
+            </div>
+        </form>
+    </div>
+
+
+   <div class="form-holder narrow">
+       <h2>Example list 2</h2>
+        <div class="list-examp">
+chicken thighs<br>
+shampoo <br>
+venison<br>
+chorizo <br>
+vermicelli <br>
+manicure<br>
+bicycle chain<br>
+        </div>
+   </div>
+
+   <div class="form-holder narrow">
+       <h2>Example list 1</h2>
+       <div class="list-examp">
+apples<br>
+oranges <br>
+tomatoes<br>
+potting soil <br>
+rotate tires <br>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+  </div> <!-- /.container-->
+
+
+   </body>
+</html>

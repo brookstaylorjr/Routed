@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon-16x16.png">
+
+   <title>Errand Routing with Insight</title>
+
+   <!-- Bootstrap core CSS -->
+     <link href="../static/css/routed.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Source+Sans+Pro" rel="stylesheet">
+ </head>
+
+ <body id="#overrride">
+
+   <div class="navbar navbar-inverse navbar-fixed-top">
+       <a href="/input"><div class="navlink">home</div></a>
+       <a href="/about"><div class="navlink">about</div></a>
+       <a href="/input"> <img id="logo" src="../static/img/routed_logo.png"></a>
+   </div>
+
+
+ <div class="container">
+    <div class="form-holder">
+        <h2>Here's what we searched for.</h2>
+        <div>Hover over the items to see the best stores we found nearby.</div>
+        <h3>Your Shopping List</h3>
+        <table class="table table-hover">
+          {% for item in shopping_list %}
+          <tr>
+              <td>{{item}}
+                  <div class="hover-popup lilguy">
+                      <b>Found at:<br></b>
+                      {% set scores = all_scores[loop.index0] %}
+                      {%for choice in all_choices[loop.index0]%}
+                         {{choice}}  - {{"%.3f"|format(scores[loop.index0])}}<br>
+                      {% endfor %}
+                  </div>
+              </td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+ </div>
+
+
+     {% set colors = ['green', 'red', 'yellow'] %}
+     {% set names = ['Best fit:', 'Optimizing for distance:', 'Optimizing for Yelp rating:']%}
+     <div class="container">
+         <h2>Suggested routes (click to open map)</h2>
+     </div>
+    {% for route in all_routes %}
+    {% set len1 = all_starts[loop.index0] %}
+    {% set name = names[loop.index0] %}
+    {% set color = colors[loop.index0] %}
+   <a href="{{all_mapurls[loop.index0]}}" target="_blank">
+   <div class = "container tight {{color}}">
+        <h5 class="{{color}}"> {{name}}</h5>
+
+        {% for stop in route %}
+        <div class="route-stop {{color}}">
+            <h4>{{1 + loop.index0}}) {{top_choices[len1+stop-2]}}</h4>
+            {{len1}}
+            {{top_addresses[len1+stop-2]}} <br>
+            {{top_stars[len1+stop-2]}} / 5 stars <br><br>
+            <b>You can get:</b> <br>
+            {% for item in top_items[len1+stop-2] %}
+                -{{item}}<br>
+            {% endfor %}
+        </div>
+        {% endfor %}
+       <div class="route_summary {{color}}">
+        <img src="{{all_imgurls[loop.index0]}}" width="200" frameborder="0" style="border:0" />
+       </div>
+
+
+    </div>
+       </a>
+   {% endfor %}
+
+
+
+
+
+
+
+
+
+   <!-- Placed at the end of the document so the pages load faster -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   </body>
+</html>

@@ -1,0 +1,260 @@
+/*
+dark - 393E46
+greenish - 00ADB5
+light - FFF4E0
+yellow - F8B500
+red - FC3C3C
+
+
+font-family: 'Cherry Swash', cursive;
+font-family: 'Source Sans Pro', sans-serif;
+
+*/
+
+/* General stuff */
+
+body {
+    color:#393E46;
+    font-size:18px;
+    margin:0px;
+    width:100%;
+    background-color:#FFF4E0;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+h2{
+    font-size:30px;
+    font-family: 'Cherry Swash', cursive;
+    margin: 5px 2px;
+    text-align:center;
+}
+
+h5{
+    font-size:18px;
+    font-family: 'Cherry Swash', cursive;
+    margin: 4px;
+}
+
+
+/* Navbar stuff */
+
+.navbar{
+    width:100%;
+    overflow:hidden;
+    background-color: #00ADB5;
+    height: 150px;
+    display:block;
+    margin:0px;
+    font-family: 'Cherry Swash', cursive;
+    border-bottom: 4px solid #393E46;
+}
+
+.navlink{
+    display:block;
+    float:left;
+    text-align:center;
+    width:100px;
+    height:100%;
+}
+
+a .navlink{
+    color:#FFF4E0;
+    font-size:36px;
+    overflow:hidden;
+    padding:50px 10px 0px 10px;
+}
+
+.navlink:hover{
+    background-color: #F8B500;
+}
+
+#logo{
+height:130px;
+width:auto;
+float:right;
+margin-right:20px;
+margin-top:15px;
+}
+
+/* Main body stuff */
+
+.container{
+    width:1024px;
+    margin-left:auto;
+    margin-right:auto;
+    overflow:hidden;
+    margin-top:40px;
+}
+
+.form-holder{
+float:left;
+display:block;
+width:400px;
+margin-left:40px
+}
+
+.form-holder.narrow{
+width:220px;
+float:right;
+margin-right:40px;
+margin-left:0px;
+}
+
+.list-examp{
+text-align:center;
+color:#00ADB5;
+border:2px solid #00ADB5;
+padding:10px;
+border-radius:8px;
+margin:0px 20px;
+}
+
+.form-holder label,h3{
+display:block;
+width:90%;
+padding:10px;
+color:#FC3C3C;
+text-align: center;
+margin: 8px auto;
+border-bottom: 3px solid #FC3C3C;
+border-top: 3px solid #FC3C3C;
+font-size: 24px;
+}
+
+.form-holder textarea,input{
+width:100%;
+font-size:20px;
+margin:8px 0px;
+}
+
+.form-holder button{
+font-family: 'Cherry Swash', cursive;
+font-size: 32px;
+background-color:#00ADB5;
+border-radius:8px;
+width:60%;
+margin:8px auto;
+color:#FFF4E0;
+display:block;
+}
+
+.form-holder button:hover{
+    background-color:#F8B500;
+}
+
+
+.form-holder table{
+width:80%;
+font-size:20px;
+margin:12px auto;
+background-color:#FFF;
+border-radius:8px;
+display:block;
+padding:8px;
+border: 2px solid #393E46;
+}
+
+.form-holder td{
+border-bottom: 2px solid #393E46;
+}
+
+.form-holder td:hover{
+background-color:#F8B500;
+}
+
+ .hover-popup{
+    width: 0px;
+    display:block;
+    font-size: 12px;
+    position: absolute;
+    margin-left: 120px;
+    background-color: #FFF;
+    margin-top: -30px;
+    padding:0px;
+    -webkit-transition: width 0s, padding 0s; /* Safari */
+     transition: width 0s, padding 0s;
+     overflow:hidden;
+     border-style:none;
+}
+
+ td:hover .hover-popup{
+    width:200px;
+    padding:10px;
+    -webkit-transition: width 0.25s, padding 0.25s; /* Safari */
+    transition: width 0.25s, padding 0.25s;
+    border-left: 2px solid;
+}
+
+
+.route-stop{
+    float:left;
+    width: 135px;
+    margin:4px 0px;
+    border-right: 2px solid #000;
+    padding: 8px 6px;
+    font-size:14px;
+    background-color:#FFF4E0;
+}
+
+.route-stop.green{
+    border-color:#00ADB5;
+}
+.route-stop.red{
+    border-color:#FC3C3C;
+}
+.route-stop.yellow{
+    border-color:#F8B500;
+}
+
+.route-stop h4{
+    margin: 3px 0px;
+    font-size:18px;
+}
+
+.route-stop.green h4{
+    color:#00ADB5;
+}
+.route-stop.red h4{
+    color:#FC3C3C;
+}
+.route-stop.yellow h4{
+    color:#F8B500;
+}
+
+h3.green, h5.green{
+    color:#00ADB5;
+    border-color:#00ADB5;
+}
+h3.red, h5.red{
+    color:#FC3C3C;
+    border-color:#FC3C3C;
+}
+h3.yellow, h5.yellow {
+    color:#F8B500;
+    border-color:#F8B500;
+}
+
+a .container h5{
+    text-decoration:none;
+}
+
+
+a .container{
+    color: #393E46;
+    text-decoration:none;
+}
+
+a .container:hover{
+    background-color: #dbd5cb;
+    -webkit-transition: background-color 0.8s; /* Safari */
+    transition: background-color 0.8s;
+}
+
+
+.container.tight{
+    margin-top:0px;
+    border-radius: 8px;
+    padding-left: 8px;
+
+}
