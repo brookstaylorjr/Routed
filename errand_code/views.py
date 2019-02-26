@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 import routedtools
-import config
+from config import *
 
 # A) Connect to appropriate Yelp database
 print('Establishing database connection....')
@@ -36,7 +36,7 @@ def errand_output():
 
     # 1) Pull address - geocode it and find nearby businesses
     url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + start_address.replace(' ', '+') + \
-          '&key=AIzaSyBiYgVNU_z-2EKbxNTLVS-N6LZKIxgViJc'
+          '&key=' + api_key
     r = requests.get(url)
     # Pull out latitude/longitude
     start_lat = r.json()['results'][0]['geometry']['location']['lat']

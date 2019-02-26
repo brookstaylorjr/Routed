@@ -8,8 +8,8 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from itertools import permutations, repeat
-import config
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+from config import *
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 def get_stop_words(stop_file_path):
     '''Load up a set of stopwords to perform text preprocessing'''
@@ -305,6 +305,6 @@ def build_urls(start_address, route,top_info, start_lat,start_long):
     for idx, place in enumerate(route[1:-1]):
         img_url = img_url + "&markers=label:" + str((idx + 1)) + "%7C" + str(top_info['latitude'].iloc[place - 2]) + ","
         img_url = img_url + str(top_info['longitude'].iloc[place - 2])
-    img_url = img_url + "&key=AIzaSyBiYgVNU_z-2EKbxNTLVS-N6LZKIxgViJc"
+    img_url = img_url + "&key="+api_key
     return(maps_url, img_url)
     
